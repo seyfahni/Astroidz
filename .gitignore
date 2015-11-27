@@ -51,7 +51,6 @@ Thumbs.db
 nbproject/*
 !nbproject/project.properties
 !nbproject/project.xml
-lib/nblibraries.properties
 build/
 nbbuild/
 dist/
