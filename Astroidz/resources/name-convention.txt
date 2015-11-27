@@ -1,0 +1,7 @@
+Raw Version (without skin):
+type/class/version_raw_name
+Example: textures/spacecraft/1_raw_example.svg
+
+Skin Version:
+type/class/version_skin_subversion_name
+Example: textures/spacecraft/1_skin_1_example.svg

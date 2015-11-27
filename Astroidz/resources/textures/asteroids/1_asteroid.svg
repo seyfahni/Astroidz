@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg3335"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Astor.svg">
+  <defs
+     id="defs3337" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="375"
+     inkscape:cy="520"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1024"
+     inkscape:window-height="719"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3340">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#666666"
+       d="m 428.59315,525.93898 -84.40685,-35.14319 -72.62861,-3.06177 c -39.94573,-1.68398 -72.83829,-3.3244 -73.09457,-3.64537 -0.25628,-0.32097 13.35934,-25.01216 30.25694,-54.8693 26.79783,-47.35033 30.3703,-55.19827 27.96295,-61.42857 -16.10069,-41.66904 -53.43285,-144.05969 -52.7675,-144.72504 0.47323,-0.47322 30.35369,0.3695 66.40102,1.87272 36.04734,1.50322 89.96919,2.77631 119.82633,2.82909 l 54.28571,0.096 60,73.28135 c 33,40.30474 61.65609,75.96694 63.68017,79.24934 3.22766,5.23414 0.0657,16.71027 -25.71428,93.32797 L 513,561.08219 428.59315,525.93902 Z"
+       id="path3345"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
