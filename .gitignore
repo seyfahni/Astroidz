@@ -51,6 +51,7 @@ Thumbs.db
 nbproject/*
 !nbproject/project.properties
 !nbproject/project.xml
+!lib/CopyLibs/org-netbeans-modules-java-j2seproject-copylibstask.jar
 build/
 nbbuild/
 dist/
