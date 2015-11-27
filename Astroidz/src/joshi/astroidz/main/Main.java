@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2015 Joshua und Dano.
+ * Copyright 2015 Joshua and Dano.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
