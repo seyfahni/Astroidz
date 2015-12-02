@@ -24,6 +24,5 @@
 package joshi.astroidz.space;
 
 public class Asteroid {
-    
-system.out    
+	
 }
