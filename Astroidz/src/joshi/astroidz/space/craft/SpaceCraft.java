@@ -25,19 +25,36 @@ package joshi.astroidz.space.craft;
 
 import java.util.Collections;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArraySet;
+import joshi.astroidz.space.Item;
 import joshi.astroidz.space.craft.thrusters.Thruster;
 import joshi.astroidz.space.craft.weapons.Weapon;
+import joshi.astroidz.util.Location;
+import joshi.astroidz.util.Vector;
 
-public abstract class SpaceCraft {
+public abstract class SpaceCraft implements Item {
+	
+	protected Location location;
+	protected Vector velocity;
 	
 	protected Set<Weapon> weapons;
 	protected Set<Thruster> thrusters;
 
-	public SpaceCraft(Set<Weapon> weapons, Set<Thruster> thrusters) {
-		this.weapons = weapons;
-		this.thrusters = thrusters;
+	public SpaceCraft() {
+		this.weapons = new CopyOnWriteArraySet<>();
+		this.thrusters = new CopyOnWriteArraySet<>();
 	}
 	
+	@Override
+	public Location getLocation () {
+		return location;
+	}
+	
+	@Override
+	public Vector getVelocity () {
+		return velocity;
+	}
+
 	public Set<Weapon> getWeapons() {
 		return Collections.unmodifiableSet(weapons);
 	}

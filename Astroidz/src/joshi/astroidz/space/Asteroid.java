@@ -23,6 +23,22 @@
  */
 package joshi.astroidz.space;
 
-public class Asteroid {
+import joshi.astroidz.util.Location;
+import joshi.astroidz.util.Vector;
+
+public class Asteroid implements Item {
 	
+	public int getSize() {
+		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	}
+	
+	@Override
+	public Location getLocation() {
+		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	}
+
+	@Override
+	public Vector getVelocity() {
+		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	}
 }
