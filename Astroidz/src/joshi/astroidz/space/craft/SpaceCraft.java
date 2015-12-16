@@ -21,8 +21,27 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package joshi.astroidz.spacecraft.thrusters;
+package joshi.astroidz.space.craft;
 
-public abstract class Thruster {
+import java.util.Collections;
+import java.util.Set;
+import joshi.astroidz.space.craft.thrusters.Thruster;
+import joshi.astroidz.space.craft.weapons.Weapon;
+
+public abstract class SpaceCraft {
 	
+	protected Set<Weapon> weapons;
+	protected Set<Thruster> thrusters;
+
+	public SpaceCraft(Set<Weapon> weapons, Set<Thruster> thrusters) {
+		this.weapons = weapons;
+		this.thrusters = thrusters;
+	}
+	
+	public Set<Weapon> getWeapons() {
+		return Collections.unmodifiableSet(weapons);
+	}
+	public Set<Thruster> getThrusters() {
+		return Collections.unmodifiableSet(thrusters);
+	}
 }
