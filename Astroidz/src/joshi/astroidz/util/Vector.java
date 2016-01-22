@@ -21,8 +21,53 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package joshi.astroidz.util;
 
-public class Vector {
-	
+public final class Vector {
+    
+    private final int x;
+    private final int y;
+
+    public Vector(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public Vector(Vector v) {
+        this.x = v.getX();
+        this.y = v.getY();
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+    
+    public Vector add(Vector v) {
+        return add(v.getX(), v.getY());
+    }
+    
+    public Vector add(int x, int y) {
+        return new Vector(this.x + x, this.y + y);
+    }
+
+    public Vector subtract(Vector v) {
+        return add(v.getX(), v.getY());
+    }
+    
+    public Vector subtract(int x, int y) {
+        return new Vector(this.x - x, this.y - y);
+    }
+
+    public Vector multiply(int s) {
+        return new Vector(x * s, y * s);
+    }
+
+    public Vector divide(int s) {
+        return new Vector(x / s, y / s);
+    }
 }

@@ -21,8 +21,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package joshi.astroidz.util;
 
 public class Location {
-	
-}
+
+    private final int x;
+    private final int y;
+
+    public Location(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public Location(Location l) {
+        this.x = l.getX();
+        this.y = l.getY();
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+}    
