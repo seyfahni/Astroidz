@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package joshi.astroidz.space.craft;
 
 import java.util.Collections;
@@ -33,32 +34,71 @@ import joshi.astroidz.util.Location;
 import joshi.astroidz.util.Vector;
 
 public abstract class SpaceCraft implements Item {
-	
-	protected Location location;
-	protected Vector velocity;
-	
-	protected Set<Weapon> weapons;
-	protected Set<Thruster> thrusters;
 
-	public SpaceCraft() {
-		this.weapons = new CopyOnWriteArraySet<>();
-		this.thrusters = new CopyOnWriteArraySet<>();
-	}
-	
-	@Override
-	public Location getLocation () {
-		return location;
-	}
-	
-	@Override
-	public Vector getVelocity () {
-		return velocity;
-	}
+    private Location location;
+    private Vector velocity;
+    private Vector acceleration;
 
-	public Set<Weapon> getWeapons() {
-		return Collections.unmodifiableSet(weapons);
-	}
-	public Set<Thruster> getThrusters() {
-		return Collections.unmodifiableSet(thrusters);
-	}
+    private final Set<Weapon> weapons;
+    private final Set<Thruster> thrusters;
+
+    public SpaceCraft() {
+        this.weapons = new CopyOnWriteArraySet<>();
+        this.thrusters = new CopyOnWriteArraySet<>();
+    }
+
+    @Override
+    public final Location getLocation() {
+        return location;
+    }
+
+    @Override
+    public final void setLocation(Location location) {
+        this.location = location;
+    }
+
+    @Override
+    public final Vector getVelocity() {
+        return velocity;
+    }
+
+    @Override
+    public final void setVelocity(Vector velocity) {
+        this.velocity = velocity;
+    }
+
+    @Override
+    public final Vector getAcceleration() {
+        return acceleration;
+    }
+
+    @Override
+    public final void setAcceleration(Vector acceleration) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public final Set<Weapon> getWeapons() {
+        return Collections.unmodifiableSet(weapons);
+    }
+    
+    public final boolean addWeapon(Weapon weapon) {
+        return weapons.add(weapon);
+    }
+
+    public final boolean removeWeapon(Weapon weapon) {
+        return weapons.remove(weapon);
+    }
+
+    public final Set<Thruster> getThrusters() {
+        return Collections.unmodifiableSet(thrusters);
+    }
+    
+    public final boolean addThruster(Thruster thruster) {
+        return thrusters.add(thruster);
+    }
+
+    public final boolean removeThruster(Thruster thruster) {
+        return thrusters.remove(thruster);
+    }
+
 }

@@ -21,24 +21,48 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package joshi.astroidz.space;
 
 import joshi.astroidz.util.Location;
 import joshi.astroidz.util.Vector;
 
 public class Asteroid implements Item {
-	
-	public int getSize() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
-	
-	@Override
-	public Location getLocation() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
 
-	@Override
-	public Vector getVelocity() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
+    public Asteroid() {
+    }
+
+    public int getSize() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Location getLocation() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Vector getVelocity() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void setLocation(Location location) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void setVelocity(Vector velocity) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Vector getAcceleration() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void setAcceleration(Vector acceleration) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

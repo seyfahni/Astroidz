@@ -21,12 +21,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package joshi.astroidz.space;
 
 import joshi.astroidz.util.Location;
 import joshi.astroidz.util.Vector;
 
 public interface Item {
-	public Location getLocation ();
-	public Vector getVelocity ();
+
+    Location getLocation();
+    
+    void setLocation(Location location);
+
+    Vector getVelocity();
+    
+    void setVelocity(Vector velocity);
+    
+    Vector getAcceleration();
+    
+    void setAcceleration(Vector acceleration);
+    
 }
