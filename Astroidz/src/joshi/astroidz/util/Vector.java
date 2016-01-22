@@ -26,10 +26,10 @@ package joshi.astroidz.util;
 
 public final class Vector {
     
-    private final int x;
-    private final int y;
+    private final double x;
+    private final double y;
 
-    public Vector(int x, int y) {
+    public Vector(double x, double y) {
         this.x = x;
         this.y = y;
     }
@@ -39,11 +39,11 @@ public final class Vector {
         this.y = v.getY();
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
     }
     
@@ -51,7 +51,7 @@ public final class Vector {
         return add(v.getX(), v.getY());
     }
     
-    public Vector add(int x, int y) {
+    public Vector add(double x, double y) {
         return new Vector(this.x + x, this.y + y);
     }
 
@@ -59,15 +59,23 @@ public final class Vector {
         return add(v.getX(), v.getY());
     }
     
-    public Vector subtract(int x, int y) {
+    public Vector subtract(double x, double y) {
         return new Vector(this.x - x, this.y - y);
     }
 
-    public Vector multiply(int s) {
+    public Vector multiply(double s) {
         return new Vector(x * s, y * s);
     }
 
-    public Vector divide(int s) {
+    public Vector divide(double s) {
         return new Vector(x / s, y / s);
+    }
+    
+    public double length() {
+        return Math.sqrt(x*x + y*y);
+    }
+    
+    public Vector unit() {
+        return divide(length());
     }
 }

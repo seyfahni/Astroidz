@@ -26,10 +26,10 @@ package joshi.astroidz.util;
 
 public class Location {
 
-    private final int x;
-    private final int y;
+    private final double x;
+    private final double y;
 
-    public Location(int x, int y) {
+    public Location(double x, double y) {
         this.x = x;
         this.y = y;
     }
@@ -39,11 +39,19 @@ public class Location {
         this.y = l.getY();
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
+    }
+    
+    public Location move(Vector v) {
+        return move(v.getX(), v.getY());
+    }
+
+    public Location move(double x, double y) {
+        return new Location(this.x + x, this.y + y);
     }
 }    
