@@ -97,7 +97,7 @@ public class OptionsMenu {
 } // end of class Menu
 
 public class SteuerungListener implements ActionListener{
- public void actionPerformed(ActionEvent m){
+ public void actionPerformed(ActionEvent e){
 if (e.getSource()== Infobox) {
         Object[] options ={"ok"};
         JOptinPane.showOptionDialog(null,"Wenn sie astroiz starten wollen, start drücken");//JOptionePane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE,null,options,options[0]);
@@ -108,7 +108,7 @@ if (e.getSource()== Infobox) {
 } 
  
 public class SteuerungListener implements ActionListener{
- public void actionPerformed(ActionEvent m){
+ public void actionPerformed(ActionEvent e){
  if (e.getSource()==close) {                            //schließen
         System.exit(0);
       } // end of if
