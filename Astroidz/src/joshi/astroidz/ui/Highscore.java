@@ -30,7 +30,7 @@ import java.awt.event.ActionListener;
  *
  * @author LBW
  */
-
+private int anzahlPlayer=0;
 int arrayList[] = new int[10];
 
 public class Highscore {
@@ -56,6 +56,10 @@ public class Highscore {
         
        }
     }
+public void add(Player1) {              //Player muss nich bestimmt werdenumhinzuzufügen
+    arrayList[PlayerAnzahl] = Player1;
+    PlayerAnzahl++;
+  }
 } // end of class Menu
    
 }
