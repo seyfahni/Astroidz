@@ -34,51 +34,78 @@ import javax.swing.*;
  */
 
 public class OptionsMenu {
-  private JButton Close;
+  private JButton back;
   private JButton Steuerung;  
-  private JButton Highscore; 
   private JLabel  label1;
   private JPanel panel1; 
   private JFrame frame;
+  
+  private boolean canClose = true;
+  
+  
   public static void main(String[] args) {
     Menu gui = new Menu();
-    gui.los(); 
+    gui.OMenu(); 
   } // end of main
-  public void los (){
+  public void OMenu (){
     
     frame = new JFrame("options Menu");
     panel1 = new JPanel();
     
-    Highscore = new JButton("Highscore");
+   
     Steuerung = new JButton("Steuerung");
-    Close = new JButton("close");
+    back = new JButton("back");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
     panel1.setLayout(new GridLayout(1,2));                                       //Layout
     panel1.add(Steuerung);                                                      //einfügenins Layout
-    panel1.add(Close);                                                          //einfügenins LAyout
-    panel1.add(Highscore);
+    panel1.add(back);                                                          //einfügenins LAyout
+   
     
     
     frame.setVisible(true);
     frame.setSize(400,400);
     
     
-    Highscore.addActionListener(new Highscore());                               //Highscore
+    
     Steuerung.addActionListener(new Steuerung());                               //Stuerung
-    Close.addActionListener(new Close());  
+    back.addActionListener(new back());  
     
   }
   
-
- 
-
- 
-public class CloseListener implements ActionListener{
+  
+  public class back implements ActionListener{
  public void actionPerformed(ActionEvent e){
- if (e.getSource()==close) {                            //schließen
-        System.exit(0);
-      } // end of if
-    }
+  
+public void showDetails() {
+   // code zum anzeigen der detail ansicht
+   canClose = false;
 }
+ 
+public void showOverview() {
+   // code zum anzeigen der übersicht
+   canClose = true;
+}
+ 
+public void onBackPressed() {
+    if (canClose) {
+        super.onBackPressed();
+    } else {
+        showOverview();       
+    }
+  }
+ }
+}
+
+public class Steuerung implements ActionListener{
+ public void actionPerformed(ActionEvent e){
+ 
+ 
+ }
+}
+
+
+}
+
+
   
