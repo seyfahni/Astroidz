@@ -45,7 +45,7 @@ public class MainMenu {
         mm = new MainMenu();
         mm.mmenu();
     }
-    
+
     public void mmenu() {
         frame = new JFrame("Main Menu");
         panel = new JPanel();
@@ -53,16 +53,45 @@ public class MainMenu {
         highscore = new JButton("Highscore");
         options = new JButton("Options");
         exit = new JButton("Exit");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
-        panel.setLayout(new GridLayout(1,4));                                
-        panel.add(start);                                                  
+        panel.setLayout(new GridLayout(4,1));                                
+        panel.add(start);
+        start.addActionListener(new ALstart());
         panel.add(highscore);
+        highscore.addActionListener(new ALhighscore());
         panel.add(options);
+        options.addActionListener(new ALoptions());
         panel.add(exit);
+        exit.addActionListener(new ALexit());
+        frame.setSize(800,600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(panel);
         frame.addKeyListener(new MKeyListener());
         frame.setVisible(true);
-        frame.setSize(800,600);
+    }
+    
+    public class ALstart implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            
+        }
+    }
+    
+    public class ALhighscore implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            
+        }
+    }
+    
+    public class ALoptions implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            
+        }
+    }
+    
+    public class ALexit implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            System.exit(1);
+        }
     }
     
     public class MKeyListener implements KeyListener {
@@ -78,5 +107,4 @@ public class MainMenu {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }
-} 
- 
+}
