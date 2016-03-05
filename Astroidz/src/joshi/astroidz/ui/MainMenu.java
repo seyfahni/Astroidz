@@ -33,70 +33,50 @@ import javax.swing.*;
  * @author Joshua
  */
 public class MainMenu {
-
     private JFrame frame;
+    private JPanel panel;
+    private JButton start;
+    private JButton highscore;
+    private JButton options;
+    private JButton exit;
 
     public static void main(String[] args) {
-        MainMenu m = new MainMenu();
-        m.menu();
+        MainMenu mm;
+        mm = new MainMenu();
+        mm.mmenu();
     }
     
-    public void menu() {
-      private JButton Close;
-  private JButton OptionsMenu;  
-  private JButton Infobox;
-  private JLabel  label1;
-  private JPanel panel1; 
-  private JFrame frame;
-  public static void main(String[] args) {
-    Menu gui = new Menu();
-    gui.los(); 
-  } // end of main
-  public void los (){
+    public void mmenu() {
+        frame = new JFrame("Main Menu");
+        panel = new JPanel();
+        start = new JButton("Start");
+        highscore = new JButton("Highscore");
+        options = new JButton("Options");
+        exit = new JButton("Exit");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
-    frame = new JFrame("options Menu");
-    panel1 = new JPanel();
-    
-    Highscore = new JButton("Highscore");
-    Steuerung = new JButton("Steuerung");
-    Close = new JButton("close");
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    
-    panel1.setLayout(new GridLayout(1,2));                                       //Layout
-    panel1.add(Steuerung);                                                      //einfügenins Layout
-    panel1.add(Close);                                                          //einfügenins LAyout
-    panel1.add(Highscore);
-    
-    
-    frame.setVisible(true);
-    frame.setSize(400,400);
-    
-    
-
-    Close.addActionListener(new Close());  
-    Infobox.addActionListener(new Infobox());
-    
-  }    
+        panel.setLayout(new GridLayout(1,4));                                
+        panel.add(start);                                                  
+        panel.add(highscore);
+        panel.add(options);
+        panel.add(exit);
+        frame.addKeyListener(new MKeyListener());
+        frame.setVisible(true);
+        frame.setSize(800,600);
     }
-}
+    
+    public class MKeyListener implements KeyListener {
+        public void keyTyped(KeyEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
 
+        public void keyPressed(KeyEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
 
-public class InfoboxListener implements ActionListener{
- public void actionPerformed(ActionEvent e){
-if (e.getSource()== Infobox) {
-        Object[] options ={"ok"};
-        JOptinPane.showOptionDialog(null,"Wenn sie astroiz starten wollen, start drücken");//JOptionePane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE,null,options,options[0]);
-      } // end of if
-        //steuerung noch klasse schreiben
-     } // end of if
- }
+        public void keyReleased(KeyEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
 } 
  
-public class SteuerungListener implements ActionListener{
- public void actionPerformed(ActionEvent e){
- if (e.getSource()==close) {                            //schließen
-        System.exit(0);
-      } // end of if
-    }
-}
-  
