@@ -65,7 +65,7 @@ public class MainMenu {
         exit.addActionListener(new ALexit());
         frame.setSize(800,600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(panel);
+        frame.add(panel, BorderLayout.SOUTH);
         frame.addKeyListener(new MKeyListener());
         frame.setVisible(true);
     }
