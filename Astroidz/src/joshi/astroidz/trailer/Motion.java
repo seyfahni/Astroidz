@@ -23,53 +23,95 @@
  */
 package joshi.astroidz.trailer;
 
-import javafx.scene.paint.Color;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
 
-/**
- *
- * @author Dano & Joshua
- */
 public class Motion {
- private JFrame frame;
-  private  JPanel panel;
-  
+  private JFrame frame ;
+  private MalenPanel MP ;
+  private int x = 0;
+  private int y = 0;
+  private int YS = 0;
+  private int XS = 0;
+  private int addYS = 0;
+  private int addXS = 0;
+  private int step = 1 ;       
+  private int stepY = -1 ;
+  private int durchmesser = 20 ;
   public static void main(String[] args) {
-    Motion as = new Motion();
-    as.los();
+    Motion m = new Motion();
+    m.los();
   } // end of main
-  public void los(){
-    frame = new JFrame("Spiel");
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    
-    panel = new JPanel();
-    frame.add(panel);
-    
+  private void los () {
+    frame = new JFrame("Motion");          
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+    frame.setSize(500,500);
+    MP = new MalenPanel();
+    frame.add(MP);
     frame.addKeyListener(new MKeyListener());
-    
-    frame.setSize(500,400);
     frame.setVisible(true);
+    
+    while (true) { 
+      x = x + step;
+      y = y + stepY;
+      System.out.println("x" + x+  " y "+y);
+      YS = YS+ addYS;
+      XS = XS + addXS;
+      if (YS+addYS>MP.getHeight()-50-(MP.getHeight() / 10) || YS+addYS < 0) {
+        YS -= addYS;
+      } // end of while
+      MP.repaint();
+      try { 
+        Thread.sleep(3,3);
+      } catch(Exception e) {
+      } // end of try
+      if (x>MP.getWidth()-durchmesser-(MP.getHeight() / 25)) {
+        step = -1;
+        x = 5;
+        y = YS;
+        step= +1;
+      }
+      if (x<0) {
+        step=1;
+        x = 480;
+        y = YS;
+      } // end of if
+      if (y>MP.getHeight()-50) {
+        stepY = -1;
+      }
+      if (y<0) {
+        stepY=1;
+      } // end of if
+    }
+  } // end of class Malen
+  
+  public class MalenPanel extends JPanel {
+    public void paintComponent (Graphics g)  {
+      g.setColor(Color.black);
+      g.fillRect(0,0,MP.getWidth(),MP.getHeight());
+      g.setColor(Color.green);
+      g.fillRect(XS,YS,20,20);
+    }
   }
+  
   public class MKeyListener implements KeyListener{
-    
-    
-    
-    public void keyTyped(KeyEvent e){
+    public void keyTyped (KeyEvent e) {
       char c = e.getKeyChar();
     }
-    public void keyPressed(KeyEvent e){
-      char c =e.getKeyChar();
-      if (c=='w') addl=  -3; 
-      if (c=='a') addl=   3;
-      if (c=='s') addr=  -3;
-      if (c=='d') addr=   3;
+    public void keyPressed (KeyEvent e){
+      char c = e.getKeyChar(); 
+      if (c == 'w') addYS = -4;
+      if (c == 's') addYS = 4;
+      if (c == 'a') addXS = -4;
+      if (c == 'd') addXS = 4;
     }
-    public void keyReleased(KeyEvent e){
-      char c =e.getKeyChar();
-      if (c=='w') addl=   0; 
-      if (c=='a') addl=   0;
-      if (c=='s') addr=   0;
-      if (c=='d') addr=   0;
+    public void keyReleased (KeyEvent e){
+      char c = e.getKeyChar(); 
+      if (c == 'w') addYS = 0;
+      if (c == 's') addYS = 0;
+      if (c == 'a') addXS = 0;
+      if (c == 'd') addXS = 0;
     }
-  }                                 
-    
+  }
 }
