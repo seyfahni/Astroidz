@@ -23,43 +23,41 @@
  */
 package joshi.astroidz.ui;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import java.awt.*;
 
 /**
  *
  * @author LBW
  */
-private int anzahlPlayer=0;
-int arrayList[] = new int[10];
-
 public class Highscore {
-  public class HighscoreListener implements ActionListener{                //Highscore
-    public void actionPerformed(ActionEvent e){
-     //Anzeige Highscor
-        
 
-  public void sortieren(){
-    for (int i = 0;i <= arrayList.length - 1;i++) {
-      for (int k = 0;k <= arrayList.length -1;k++) {
-        if (arrayList[i] > arrayList[i+1]) {
-          int c = arrayList[i];
-          arrayList[i] = arrayList[i+1];
-          arrayList[i+1] = c;
-        } // end of if
-      } // end of for
-    } // end of for
-    
-    System.out.println(arrayList);
-  }
-   
-        
-       }
+    public class HighscoreListener implements ActionListener {                //Highscore
+
+        private int anzahlPlayer = 0;
+
+        public void actionPerformed(ActionEvent e) {
+            //Anzeige Highscor
+        }
+
+        public void sortieren() {
+            int arrayList[] = new int[10];
+            for (int i = 0; i <= arrayList.length - 1; i++) {
+                for (int k = 0; k <= arrayList.length - 1; k++) {
+                    if (arrayList[i] > arrayList[i + 1]) {
+                        int c = arrayList[i];
+                        arrayList[i] = arrayList[i + 1];
+                        arrayList[i + 1] = c;
+                    } // end of if
+                } // end of for
+            } // end of for
+
+            System.out.println(arrayList);
+        }
+
+        /*public void add(Player player) {              //Player muss nich bestimmt werdenumhinzuzufügen
+            arrayList[PlayerAnzahl] = player;
+            PlayerAnzahl++;
+        }*/
     }
-public void add(Player1) {              //Player muss nich bestimmt werdenumhinzuzufügen
-    arrayList[PlayerAnzahl] = Player1;
-    PlayerAnzahl++;
-  }
 } // end of class Menu
-   
-}
