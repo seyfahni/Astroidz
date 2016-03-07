@@ -16,7 +16,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="Raumschiff[2].svg">
+   sodipodi:docname="2_raw_enterprise.svg">
   <defs
      id="defs4">
     <linearGradient
@@ -341,14 +341,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.5496699"
-     inkscape:cx="284.2482"
-     inkscape:cy="537.12782"
+     inkscape:zoom="1.7846285"
+     inkscape:cx="331.33072"
+     inkscape:cy="531.86261"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="1024"
-     inkscape:window-height="719"
+     inkscape:window-width="1440"
+     inkscape:window-height="851"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
@@ -374,12 +374,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline">
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 350,451.8622 c -0.58274,40.51947 -8.87313,77.96269 -8.87313,77.96269 C 320.77307,556.84407 301.60928,576.96123 285,582.2622 l 0,-69.9 c -0.48322,-9.5836 -2.88542,-14.80587 -7.5,-15 -4.2836,-0.33382 -6.92886,4.52975 -7.5,15 l 0,140 15,0 0,-30 c 0.63252,-20.93574 53.0768,-66.48444 55,-45 11.73965,39.84199 24.54626,53.0101 40,0 30,0 70,75 70,75 l 0,-140 c -28.89947,64.02721 -55.89939,59.38138 -70,25 -8.4197,-20.52967 -11.09679,-51.1493 -10,-85.5"
-       id="path3342"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccsc" />
     <a
        id="a4561">
       <path
@@ -395,5 +389,11 @@
          sodipodi:cx="360.00998"
          sodipodi:open="true" />
     </a>
+    <path
+       sodipodi:nodetypes="cccccccccccccccccccc"
+       inkscape:connector-curvature="0"
+       id="path3420"
+       d="m 369.99995,451.8622 c 0.58274,40.51947 8.87313,77.96269 8.87313,77.96269 20.3538,27.01918 39.51759,47.13634 56.12687,52.43731 l 0,-69.9 c 0.48322,-9.5836 2.88542,-14.80587 7.5,-15 4.2836,-0.33382 6.92886,4.52975 7.5,15 l 0,140 -15,0 0,-30 c -0.63252,-20.93574 -53.0768,-66.48444 -55,-45 -9.42313,42.50068 -35.38012,36.37681 -39.99995,0 -1.9232,-21.48444 -54.36748,24.06426 -55,45 l 0,30 -15,0 0,-140 c 0.57114,-10.47025 3.2164,-15.33382 7.5,-15 4.61458,0.19413 7.01678,5.4164 7.5,15 l 0,69.9 c 16.60928,-5.30097 35.77307,-25.41813 56.12687,-52.43731 0,0 8.29039,-37.44322 8.87313,-77.96269"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
   </g>
 </svg>
