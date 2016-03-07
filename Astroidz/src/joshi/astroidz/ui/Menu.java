@@ -32,40 +32,52 @@ import javax.swing.*;
  *
  * @author Joshua
  */
-public class MainMenu {
+public class Menu {
     private JFrame frame;
     private JPanel panel;
+    private JPanel mpanel;
+    private JPanel opanel;
+    private JPanel hpanel;
     private JButton start;
     private JButton highscore;
     private JButton options;
     private JButton exit;
 
     public static void main(String[] args) {
-        MainMenu mm;
-        mm = new MainMenu();
-        mm.mmenu();
+        Menu m;
+        m = new Menu();
+        m.menu();
     }
 
-    public void mmenu() {
+    public void menu() {
         frame = new JFrame("Main Menu");
         panel = new JPanel();
+        mpanel = new JPanel();
+        opanel = new JPanel();
+        hpanel = new JPanel();
         start = new JButton("Start");
         highscore = new JButton("Highscore");
         options = new JButton("Options");
         exit = new JButton("Exit");
     
-        panel.setLayout(new GridLayout(4,1));                                
-        panel.add(start);
+        mpanel.setLayout(new GridLayout(4,1));                                
+        mpanel.add(start);
         start.addActionListener(new ALstart());
-        panel.add(highscore);
+        mpanel.add(highscore);
         highscore.addActionListener(new ALhighscore());
-        panel.add(options);
+        mpanel.add(options);
         options.addActionListener(new ALoptions());
-        panel.add(exit);
+        mpanel.add(exit);
         exit.addActionListener(new ALexit());
+        
+        panel = new JPanel(new CardLayout());
+        panel.add(mpanel, BorderLayout.SOUTH);
+        panel.add(opanel, "options");
+        panel.add(hpanel, "highscore");
+        
         frame.setSize(800,600);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(panel, BorderLayout.SOUTH);
+        frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        frame.add(panel);
         frame.addKeyListener(new MKeyListener());
         frame.setVisible(true);
     }
