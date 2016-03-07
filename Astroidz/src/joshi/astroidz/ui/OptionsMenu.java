@@ -21,7 +21,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
 package joshi.astroidz.ui;
 
 import java.awt.event.*;
@@ -32,80 +31,72 @@ import javax.swing.*;
  *
  * @author Joshua
  */
-
 public class OptionsMenu {
-  private JButton back;
-  private JButton Steuerung;  
-  private JLabel  label1;
-  private JPanel panel1; 
-  private JFrame frame;
-  
-  private boolean canClose = true;
-  
-  
-  public static void main(String[] args) {
-    Menu gui = new Menu();
-    gui.OMenu(); 
-  } // end of main
-  public void OMenu (){
-    
-    frame = new JFrame("options Menu");
-    panel1 = new JPanel();
-    
-   
-    Steuerung = new JButton("Steuerung");
-    back = new JButton("back");
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    
-    panel1.setLayout(new GridLayout(1,2));                                       //Layout
-    panel1.add(Steuerung);                                                      //einfügenins Layout
-    panel1.add(back);                                                          //einfügenins LAyout
-   
-    
-    
-    frame.setVisible(true);
-    frame.setSize(400,400);
-    
-    
-    
-    Steuerung.addActionListener(new Steuerung());                               //Stuerung
-    back.addActionListener(new back());  
-    
-  }
-  
-  
-  public class back implements ActionListener{
- public void actionPerformed(ActionEvent e){
-  
-public void showDetails() {
-   // code zum anzeigen der detail ansicht
-   canClose = false;
-}
- 
-public void showOverview() {
-   // code zum anzeigen der übersicht
-   canClose = true;
-}
- 
-public void onBackPressed() {
-    if (canClose) {
-        super.onBackPressed();
-    } else {
-        showOverview();       
+
+    private JButton back;
+    private JButton Steuerung;
+    private JLabel label1;
+    private JPanel panel1;
+    private JFrame frame;
+
+    private boolean canClose = true;
+
+    public static void main(String[] args) {
+        Menu m = new Menu();
+        //m.OMenu(); 
+    } // end of main
+
+    public void OMenu() {
+
+        frame = new JFrame("options Menu");
+        panel1 = new JPanel();
+
+        Steuerung = new JButton("Steuerung");
+        back = new JButton("back");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        panel1.setLayout(new GridLayout(1, 2));                                       //Layout
+        panel1.add(Steuerung);                                                      //einfügenins Layout
+        panel1.add(back);                                                          //einfügenins LAyout
+
+        frame.setVisible(true);
+        frame.setSize(400, 400);
+
+        Steuerung.addActionListener(new Steuerung());                               //Stuerung
+        back.addActionListener(new Back());
+
     }
-  }
- }
-}
 
-public class Steuerung implements ActionListener{
- public void actionPerformed(ActionEvent e){
- 
- 
- }
-}
+    class Back implements ActionListener {
 
-
-}
-
-
+        @Override
+        public void actionPerformed(ActionEvent e) {
   
+        }
+
+        public void showDetails() {
+            // code zum anzeigen der detail ansicht
+            canClose = false;
+        }
+
+        public void showOverview() {
+            // code zum anzeigen der übersicht
+            canClose = true;
+        }
+
+        public void onBackPressed() {
+            if (canClose) {
+                // TODO Was muss hier rein?!
+            } else {
+                showOverview();
+            }
+        }
+    }
+    public class Steuerung implements ActionListener {
+
+    public void actionPerformed(ActionEvent e) {
+
+    }
+}
+
+}
