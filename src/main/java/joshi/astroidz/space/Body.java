@@ -27,18 +27,51 @@ package joshi.astroidz.space;
 import joshi.astroidz.util.Location;
 import joshi.astroidz.util.Vector;
 
-public interface Item {
+/**
+ * A body is any object that floates the virtual space in the game.
+ */
+public interface Body {
 
+    /**
+     * Get the bodies location at the moment of call.
+     *
+     * @return the bodies location
+     */
     Location getLocation();
     
+    /**
+     * Change the bodies location to a new one.
+     *
+     * @param location the bodies new location
+     */
     void setLocation(Location location);
 
+    /**
+     * Get the bodies velocity at the moment of call.
+     *
+     * @return the bodies velocity
+     */
     Vector getVelocity();
     
+    /**
+     * Change the bodies velocity to a new one.
+     *
+     * @param velocity the bodies new velocity
+     */
     void setVelocity(Vector velocity);
     
+    /**
+     * Get the acceleration the body experiences.
+     *
+     * @return the bodies acceleration
+     */
     Vector getAcceleration();
     
+    /**
+     * Set the bodies acceleration.
+     *
+     * @param acceleration the bodies new acceleration
+     */
     void setAcceleration(Vector acceleration);
     
 }

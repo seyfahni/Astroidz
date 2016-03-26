@@ -27,11 +27,23 @@ package joshi.astroidz.space;
 import joshi.astroidz.util.Location;
 import joshi.astroidz.util.Vector;
 
-public class Asteroid implements Item {
+/**
+ * The Astroid is the central objet of the game. Astroids are the inactive structure every player
+ * has to evade.
+ */
+public final class Astroid implements Body {
 
-    public Asteroid() {
+    /**
+     * Creates an new Astroid with an random size.
+     */
+    public Astroid() {
     }
 
+    /**
+     * Get the astroids size. With each hit the size decreases, sometimes the astroid splits.
+     *
+     * @return the astroids size
+     */
     public int getSize() {
         throw new UnsupportedOperationException("Not supported yet.");
     }

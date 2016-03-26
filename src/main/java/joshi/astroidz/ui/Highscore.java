@@ -21,43 +21,57 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package joshi.astroidz.ui;
 
-import java.awt.event.*;
-import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 /**
- *
- * @author LBW
+ * The highscore display.
  */
 public class Highscore {
 
-    public class HighscoreListener implements ActionListener {                //Highscore
+    /**
+     * Create a new highscore display.
+     */
+    public Highscore() {
+    }
 
-        private int anzahlPlayer = 0;
+    class HighscoreListener implements ActionListener {                
 
+        private int anzahlPlayer;
+
+        HighscoreListener() {
+        }
+
+        @Override
         public void actionPerformed(ActionEvent e) {
             //Anzeige Highscor
         }
 
+        /**
+         * An method to sort the highscores.
+         */
         public void sortieren() {
-            int arrayList[] = new int[10];
+            final int[] arrayList = new int[10];
             for (int i = 0; i <= arrayList.length - 1; i++) {
                 for (int k = 0; k <= arrayList.length - 1; k++) {
                     if (arrayList[i] > arrayList[i + 1]) {
-                        int c = arrayList[i];
+                        final int c = arrayList[i];
                         arrayList[i] = arrayList[i + 1];
                         arrayList[i + 1] = c;
-                    } // end of if
-                } // end of for
-            } // end of for
+                    }
+                }
+            }
 
-            System.out.println(arrayList);
+            System.out.println(Arrays.toString(arrayList));
         }
 
-        /*public void add(Player player) {              //Player muss nich bestimmt werdenumhinzuzufügen
+        /*public void add(Player player) {        //Player muss nich bestimmt werden um hinzuzufügen
             arrayList[PlayerAnzahl] = player;
             PlayerAnzahl++;
         }*/
     }
-} // end of class Menu
+}

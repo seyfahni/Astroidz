@@ -13,6 +13,12 @@
     <name>Astroidz</name>
     <description>A simple game, based on Astroids.</description>
     <inceptionYear>2015</inceptionYear>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+        </license>
+    </licenses>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

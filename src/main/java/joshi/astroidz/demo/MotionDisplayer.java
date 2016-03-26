@@ -35,7 +35,7 @@ public class MotionDisplayer extends javax.swing.JFrame {
      */
     public MotionDisplayer() {
         initComponents();
-        KeyInput input = motionDisplay.getKeyListener();
+        KeyInput input = this.motionDisplay.getKeyListener();
         addKeyListener(input);
     }
 

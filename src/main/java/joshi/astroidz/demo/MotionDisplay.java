@@ -32,7 +32,7 @@ import java.util.logging.Logger;
  *
  * @author niklas
  */
-public class MotionDisplay extends javax.swing.JPanel {
+public final class MotionDisplay extends javax.swing.JPanel {
     
     private static final long serialVersionUID = -6929342652492585794L;
     
@@ -48,7 +48,7 @@ public class MotionDisplay extends javax.swing.JPanel {
      */
     public MotionDisplay() {
         initComponents();
-        input = new KeyInput();
+        this.input = new KeyInput();
         setBackground(Color.BLACK);
         new Thread(() -> update()).start();
     }
@@ -86,27 +86,27 @@ public class MotionDisplay extends javax.swing.JPanel {
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, getWidth(), getHeight());
         g.setColor(Color.GREEN);
-        g.fillRect((int) x, (int) y, DELTA, DELTA);
+        g.fillRect((int) this.x, (int) this.y, DELTA, DELTA);
     }
 
     private void update() {
         long oldTime = System.nanoTime();
         while (true) {
-            long newTime = System.nanoTime();
-            long deltaTime = newTime - oldTime;
-            x += input.getHorizontalMovement() * (deltaTime / 2000000.0);
-            y += input.getVerticalMovement()   * (deltaTime / 2000000.0);
-            if (x < 0) {
-                x = 0;
+            final long newTime = System.nanoTime();
+            final long deltaTime = newTime - oldTime;
+            this.x += input.getHorizontalMovement() * (deltaTime / 2000000.0);
+            this.y += input.getVerticalMovement()   * (deltaTime / 2000000.0);
+            if (this.x < 0) {
+                this.x = 0;
             }
-            if (y < 0) {
-                y = 0;
+            if (this.y < 0) {
+                this.y = 0;
             }
-            if (x > getWidth() - DELTA) {
-                x = getWidth() - DELTA;
+            if (this.x > getWidth() - DELTA) {
+                this.x = getWidth() - DELTA;
             }
-            if (y > getHeight() - DELTA) {
-                y = getHeight() - DELTA;
+            if (this.y > getHeight() - DELTA) {
+                this.y = getHeight() - DELTA;
             }
             oldTime = newTime;
             repaint();
@@ -119,6 +119,6 @@ public class MotionDisplay extends javax.swing.JPanel {
     }
     
     KeyInput getKeyListener() {
-        return input;
+        return this.input;
     }
 }

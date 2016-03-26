@@ -24,57 +24,119 @@
 
 package joshi.astroidz.util;
 
+/**
+ * An math vector.
+ */
 public final class Vector {
-    
+
     private final double x;
     private final double y;
 
+    /**
+     * Create a new vector with the given values.
+     *
+     * @param x the x value
+     * @param y the y value
+     */
     public Vector(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    public Vector(Vector v) {
-        this.x = v.getX();
-        this.y = v.getY();
-    }
-
+    /**
+     * Get the vectors x value.
+     *
+     * @return the x value
+     */
     public double getX() {
-        return x;
+        return this.x;
     }
 
+    /**
+     * Get the vectors y value.
+     *
+     * @return the y value
+     */
     public double getY() {
-        return y;
-    }
-    
-    public Vector add(Vector v) {
-        return add(v.getX(), v.getY());
-    }
-    
-    public Vector add(double x, double y) {
-        return new Vector(this.x + x, this.y + y);
+        return this.y;
     }
 
-    public Vector subtract(Vector v) {
-        return add(v.getX(), v.getY());
-    }
-    
-    public Vector subtract(double x, double y) {
-        return new Vector(this.x - x, this.y - y);
-    }
-
-    public Vector multiply(double s) {
-        return new Vector(x * s, y * s);
+    /**
+     * Add a vector to this one.
+     *
+     * @param vector the vector to add
+     * @return a new vector that is this + vector
+     */
+    public Vector add(Vector vector) {
+        return add(vector.getX(), vector.getY());
     }
 
-    public Vector divide(double s) {
-        return new Vector(x / s, y / s);
+    /**
+     * Add values to this vector.
+     *
+     * @param xToAdd x value to add
+     * @param yToAdd y value to add
+     * @return a new vector that is this + (x;y)
+     */
+    public Vector add(double xToAdd, double yToAdd) {
+        return new Vector(this.x + xToAdd, this.y + yToAdd);
     }
-    
+
+    /**
+     * Subtract a vector from this one.
+     *
+     * @param vector the vector to subtract
+     * @return a new vector that is this - vector
+     */
+    public Vector subtract(Vector vector) {
+        return add(vector.getX(), vector.getY());
+    }
+
+    /**
+     * Subtracts values from this vector.
+     *
+     * @param xToSubtract x value to subtract
+     * @param yToSubtract y value to subtract
+     * @return a new vector that is this - (x;y)
+     */
+    public Vector subtract(double xToSubtract, double yToSubtract) {
+        return new Vector(this.x - xToSubtract, this.y - yToSubtract);
+    }
+
+    /**
+     * Multiply this vector with a scalar.
+     *
+     * @param scalar the multiplicant
+     * @return the new vector
+     */
+    public Vector multiply(double scalar) {
+        return new Vector(this.x * scalar, this.y * scalar);
+    }
+
+    /**
+     * Divide this vector by a scalar.
+     *
+     * @param scalar the value to divide by
+     * @return the new vector
+     */
+    public Vector divide(double scalar) {
+        return new Vector(this.x / scalar, this.y / scalar);
+    }
+
+    /**
+     * Calculate the length of this vector.
+     *
+     * @return this vectors length
+     */
     public double length() {
-        return Math.sqrt(x*x + y*y);
+        return Math.sqrt(this.x * this.x + this.y * this.y);
     }
-    
+
+    /**
+     * Create an unit vector of this vector.
+     *
+     * @return the unit vector
+     */
     public Vector unit() {
         return divide(length());
     }

@@ -24,8 +24,14 @@
 
 package joshi.astroidz.space.craft.thrusters;
 
+/**
+ * Thrusters are essential for acceleration of spacecrafts.
+ */
 public abstract class Thruster {
 
+    /**
+     * Create a new Thruster.
+     */
     public Thruster() {
     }
 

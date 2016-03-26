@@ -24,14 +24,15 @@
 
 package joshi.astroidz.ui;
 
-import java.awt.event.*;
-import java.awt.*;
-import javax.swing.*;
-
 /**
- *
- * @author Joshua
+ * The in-game display.
  */
 public class Hud {
+
+    /**
+     * Create a new HUD.
+     */
+    public Hud() {
+    }
     
 }

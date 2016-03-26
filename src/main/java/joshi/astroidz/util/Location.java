@@ -24,34 +24,61 @@
 
 package joshi.astroidz.util;
 
-public class Location {
+/**
+ * An absolute position in a world.
+ */
+public final class Location {
 
     private final double x;
     private final double y;
 
+    /**
+     * Creates a new location by giving coordinates.
+     *
+     * @param x the x coordinate
+     * @param y the y coordinate
+     */
     public Location(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    public Location(Location l) {
-        this.x = l.getX();
-        this.y = l.getY();
-    }
-
+    /**
+     * Get the x coordinate of the location.
+     *
+     * @return the locations x coordinate
+     */
     public double getX() {
-        return x;
+        return this.x;
     }
 
+    /**
+     * Get the y coordinate of the location.
+     *
+     * @return the locations y coordinate
+     */
     public double getY() {
-        return y;
+        return this.y;
     }
     
-    public Location move(Vector v) {
-        return move(v.getX(), v.getY());
+    /**
+     * Move the location by a vector.
+     *
+     * @param vector the vector to move by
+     * @return the moved location
+     */
+    public Location move(Vector vector) {
+        return move(vector.getX(), vector.getY());
     }
 
-    public Location move(double x, double y) {
-        return new Location(this.x + x, this.y + y);
+    /**
+     * Move the location by the given amount.
+     *
+     * @param deltaX the x to move the location
+     * @param deltaY the y to move the location
+     * @return the moved location
+     */
+    public Location move(double deltaX, double deltaY) {
+        return new Location(this.x + deltaX, this.y + deltaY);
     }
 }    

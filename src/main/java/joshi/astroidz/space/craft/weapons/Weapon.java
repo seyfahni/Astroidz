@@ -24,8 +24,14 @@
 
 package joshi.astroidz.space.craft.weapons;
 
+/**
+ * Weapons are the only way to destroy astroids and other enimies.
+ */
 public abstract class Weapon {
 
+    /**
+     * Create a new Weapon.
+     */
     public Weapon() {
     }
 
