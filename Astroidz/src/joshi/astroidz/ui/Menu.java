@@ -34,6 +34,7 @@ import javax.swing.*;
  */
 public class Menu {
     private JFrame frame;
+    private CardLayout cl;
     private JPanel panel;
     private JPanel mpanel;
     private JPanel opanel;
@@ -42,6 +43,8 @@ public class Menu {
     private JButton highscore;
     private JButton options;
     private JButton exit;
+    private JButton back;
+    private JButton controls;
 
     public static void main(String[] args) {
         Menu m;
@@ -51,7 +54,8 @@ public class Menu {
 
     public void menu() {
         frame = new JFrame("Main Menu");
-        panel = new JPanel();
+        cl = new CardLayout();
+        panel = new JPanel(cl);
         mpanel = new JPanel();
         opanel = new JPanel();
         hpanel = new JPanel();
@@ -59,6 +63,8 @@ public class Menu {
         highscore = new JButton("Highscore");
         options = new JButton("Options");
         exit = new JButton("Exit");
+        back = new JButton("Zurück");
+        controls = new JButton("Steuerung");
     
         mpanel.setLayout(new GridLayout(4,1));                                
         mpanel.add(start);
@@ -70,10 +76,17 @@ public class Menu {
         mpanel.add(exit);
         exit.addActionListener(new ALexit());
         
+        hpanel.setLayout(new GridLayout(1,1));
+        hpanel.add(back);
+        back.addActionListener(new ALback());
+        
+        opanel.setLayout(new GridLayout(1,1));
+        opanel.add(back);
+        
         panel = new JPanel(new CardLayout());
-        panel.add(mpanel, BorderLayout.SOUTH);
-        panel.add(opanel, "options");
+        panel.add(mpanel, "menu");
         panel.add(hpanel, "highscore");
+        panel.add(opanel, "options");
         
         frame.setSize(800,600);
         frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -90,19 +103,25 @@ public class Menu {
     
     public class ALhighscore implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            
+            cl.show(panel, "highscore");
         }
     }
     
     public class ALoptions implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            
+            cl.show(panel, "options");
         }
     }
     
     public class ALexit implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             System.exit(1);
+        }
+    }
+    
+    public class ALback implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+            cl.previous(panel);
         }
     }
     
