@@ -28,10 +28,6 @@ import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 
-/**
- *
- * @author Joshua
- */
 public class Menu {
     private JFrame frame;
     private CardLayout cl;
@@ -65,8 +61,8 @@ public class Menu {
         exit = new JButton("Exit");
         back = new JButton("Zurück");
         controls = new JButton("Steuerung");
-    
-        mpanel.setLayout(new GridLayout(4,1));                                
+
+        mpanel.setLayout(new GridLayout(4,1));
         mpanel.add(start);
         start.addActionListener(new ALstart());
         mpanel.add(highscore);
@@ -75,67 +71,67 @@ public class Menu {
         options.addActionListener(new ALoptions());
         mpanel.add(exit);
         exit.addActionListener(new ALexit());
-        
+
         hpanel.setLayout(new GridLayout(1,1));
         hpanel.add(back);
         back.addActionListener(new ALback());
-        
+
         opanel.setLayout(new GridLayout(1,1));
         opanel.add(back);
-        
+
         panel = new JPanel(new CardLayout());
         panel.add(mpanel, "menu");
         panel.add(hpanel, "highscore");
         panel.add(opanel, "options");
-        
+
         frame.setSize(800,600);
         frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         frame.add(panel);
         frame.addKeyListener(new MKeyListener());
         frame.setVisible(true);
     }
-    
+
     public class ALstart implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            
+
         }
     }
-    
+
     public class ALhighscore implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             cl.show(panel, "highscore");
         }
     }
-    
+
     public class ALoptions implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             cl.show(panel, "options");
         }
     }
-    
+
     public class ALexit implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             System.exit(1);
         }
     }
-    
+
     public class ALback implements ActionListener{
         public void actionPerformed(ActionEvent e){
             cl.previous(panel);
         }
     }
-    
+
     public class MKeyListener implements KeyListener {
         public void keyTyped(KeyEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            throw new UnsupportedOperationException("Not supported yet.");
         }
 
         public void keyPressed(KeyEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            throw new UnsupportedOperationException("Not supported yet.");
         }
 
         public void keyReleased(KeyEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            throw new UnsupportedOperationException("Not supported yet.");
         }
     }
 }
