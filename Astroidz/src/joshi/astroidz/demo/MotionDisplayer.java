@@ -25,7 +25,7 @@ package joshi.astroidz.demo;
 
 /**
  *
- * @author niklas
+ * @author
  */
 public class MotionDisplayer extends javax.swing.JFrame {
     private static final long serialVersionUID = 6471306128692073196L;
