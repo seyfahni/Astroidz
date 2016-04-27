@@ -28,25 +28,39 @@
         <additionalparam>-Xdoclint:none</additionalparam>
     </properties>
 
+	<repositories>
+		<repository>
+			<id>sonatype-public</id>
+			<url>https://oss.sonatype.org/content/groups/public/</url>
+		</repository>
+	</repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.lwjgl</groupId>
             <artifactId>lwjgl</artifactId>
-            <version>3.0.0b</version>
+            <version>3.0.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.lwjgl</groupId>
             <artifactId>lwjgl-platform</artifactId>
-            <version>3.0.0b</version>
+            <version>3.0.0-SNAPSHOT</version>
 			<classifier>natives-linux</classifier>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.lwjgl</groupId>
             <artifactId>lwjgl-platform</artifactId>
-            <version>3.0.0b</version>
+            <version>3.0.0-SNAPSHOT</version>
 			<classifier>natives-windows</classifier>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl-platform</artifactId>
+            <version>3.0.0-SNAPSHOT</version>
+			<classifier>natives-osx</classifier>
             <scope>compile</scope>
         </dependency>
 

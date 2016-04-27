@@ -21,22 +21,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
 package joshi.astroidz.main;
 
 /**
  * The man class contains only the startup method.
  */
 public final class Main {
-    
-    private Main() { }
 
-    /**
-     * The main method.
-     *
-     * @param args command line arguments
-     */
-    public static void main(String[] args) {
-            
-    }
+	private Main() {
+	}
+
+	/**
+	 * The main method.
+	 *
+	 * @param args command line arguments
+	 */
+	public static void main(String[] args) {
+	}
 }
