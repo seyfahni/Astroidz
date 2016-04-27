@@ -37,6 +37,30 @@ public final class Main {
      * @param args command line arguments
      */
     public static void main(String[] args) {
-            
+         try {
+      Display.setDisplayMode(new DisplayMode(800,800));
+      Display.setTitel("Astroiz");
+      Display.create();
+    } catch(LWJGLException e) {
+      System.out.println(e.getMessage());
+      Display.destroy();
+      System.exit(1);
+    } // end of try
+    glMatrixMode(GL_projektion);
+     glOrtho(0,800,600,1,-1)
+    glMatrixMode(GLMODELVIEW)
+    
+    while (!Display.isCloseRepuested()) {
+      glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+      glBegin(GL_QUADS);
+      
+      
+      
+      glEnd();
+      Display.update();
+      
+    } // end of while
+    Display.destroy();
+    System.exit(0);       
     }
 }
