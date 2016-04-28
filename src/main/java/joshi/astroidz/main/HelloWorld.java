@@ -10,6 +10,11 @@ import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
 public class HelloWorld {
+
+    private final int WIDTH = 700;
+    private final int HEIGHT = 700;
+ 
+    
     // The window handle
     private long window;
  
@@ -45,11 +50,8 @@ public class HelloWorld {
         glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE); // the window will stay hidden after creation
         glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE); // the window will be resizable
  
-        int WIDTH = 300;
-        int HEIGHT = 300;
- 
         // Create the window
-        window = glfwCreateWindow(WIDTH, HEIGHT, "Hello World!", NULL, NULL);
+        window = glfwCreateWindow(WIDTH, HEIGHT, "Astroidz", NULL, NULL);
         if ( window == NULL ) {
 			throw new RuntimeException("Failed to create the GLFW window");
 		}
@@ -88,13 +90,26 @@ public class HelloWorld {
         GL.createCapabilities();
  
         // Set the clear color
-        glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
+        glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
  
+        DisplayObject greenTriangle = new DisplayObject(GL_TRIANGLES, new float[] {-0.3f, 0.1f, 0.0f}, new float[] {0.0f, -0.2f, 0.5f});
+        
         // Run the rendering loop until the user has attempted to close
         // the window or has pressed the ESCAPE key.
         while ( !glfwWindowShouldClose(window) ) {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
- 
+
+
+            int upDown = glfwGetKey(window, GLFW_KEY_W) - glfwGetKey(window, GLFW_KEY_S);
+            int rightLeft = glfwGetKey(window, GLFW_KEY_D) - glfwGetKey(window, GLFW_KEY_A);
+            
+            
+            greenTriangle.addSpeed(rightLeft * 0.0001f, upDown * 0.0001f);
+            greenTriangle.moveBySpeed();
+            glColor3f(0.0f, 0.7f, 0.1f);
+            greenTriangle.draw();
+            
+            
             glfwSwapBuffers(window); // swap the color buffers
  
             // Poll for window events. The key callback above will only be
