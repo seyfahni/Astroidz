@@ -54,30 +54,21 @@ public class Highscore {
         /**
          * An method to sort the highscores.
          */
-  System.out.println("Highscore");
-  System.out.print("[");
-  for (i=0;i<11;i++ ) {
-    feld[i]= (int)(Math.random()*100);
-    if (i==10) {
-      System.out.print(feld[i]);
-    } // end of if
-    else {
-      System.out.print(feld[i]+", ");
-    } // end of if-else
-  } // end of for
-  System.out.print("]");
-  public void sort(){
-    for (i=0;i<11 ;i++ ) {
-      for (j=0;j<11 ;j++ ) {
-        if (feld[i]<feld[j]) {
-          z= feld[i];
-          feld[i]=feld[j];
-          feld[j]=z;
-        } // end of if
-      } // end of for
-    } // end of for
-  } // end of class Highscore
-}
+        public void sortieren() {
+            final int[] arrayList = new int[10];
+            for (int i = 0; i <= arrayList.length - 1; i++) {
+                for (int k = 0; k <= arrayList.length - 1; k++) {
+                    if (arrayList[i] > arrayList[i + 1]) {
+                        final int c = arrayList[i];
+                        arrayList[i] = arrayList[i + 1];
+                        arrayList[i + 1] = c;
+                    }
+                }
+            }
+
+            System.out.println(Arrays.toString(arrayList));
+        }
+
         /*public void add(Player player) {        //Player muss nich bestimmt werden um hinzuzufügen
             arrayList[PlayerAnzahl] = player;
             PlayerAnzahl++;
