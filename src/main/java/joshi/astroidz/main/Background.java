@@ -26,13 +26,15 @@ public class Background {
 	} // end of main
 
 	public void los() {
-		JFrame jframe = new JFrame("Animation");
-		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JFrame frame = new JFrame("Animation");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		m = new ZeichenPanel();
-		jframe.add(m);
+		frame.add(m);
 
-		imageArray[0] = new ImageIcon("Background.jpg").getImage();
-
+		imageArray[0] = new ImageIcon("background1.jpg").getImage();
+                
+                frame.setSize(600,700);
+                frame.setVisible(true);
 	}
 
 	class ZeichenPanel extends JPanel {
